@@ -1,0 +1,31 @@
+.header {  
+  background-color: rgb(219, 1, 212);
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    li {
+      list-style: none;
+      a {        
+        font-weight: 700;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 5px;
+        color: white;
+        &:hover {
+          color: blue;
+        }
+      }
+    }
+  }
+}

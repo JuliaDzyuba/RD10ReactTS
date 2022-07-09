@@ -65,8 +65,19 @@ button {
 }
 
 .container {
+  width: 100%;
   min-width: 350px;
   max-width: 1550px;
   padding: 0 5px;
   margin: 0 auto;
+}
+
+.light {
+  color: #353535;
+  background-color: #ffffff;
+}
+
+.dark {
+  color: #ffffff;
+  background-color: #353535;
 }

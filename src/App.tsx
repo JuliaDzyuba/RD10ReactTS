@@ -17,40 +17,66 @@ const fetchData = async (url: string): Promise<IData[]> => {
   return data;  
 }
 
+export const ThemeContext = React.createContext<{
+  theme: string,
+  toggleTheme: () => void,
+}>({
+  theme: 'light',
+  toggleTheme() {},
+});
+
 const App: React.FC = () => {
   const [userData, setUserData] = useState<IData[]>([]);
+  const [appTheme, setTheme] = useState<string>('light');
   
   useEffect(() => {
     (async () => {
-      const data = await fetchData('./data.json');
-      if(data.length) {
-        setUserData(data);
+      try {
+        const data = await fetchData('./data.json');
+        if(data.length) {
+          setUserData(data);
+        }      
+      } catch (error) {
+        console.log(error);        
       }      
     })();
   }, []);
 
-  const renderAvatar = () => <Avatar source={userData[0].avatar} username={userData[0].name}/>;
+  const renderAvatar = () => <Avatar source={userData[0]?.avatar} username={userData[0]?.name}/>;
+
+  const toggleTheme = () => {
+    console.log('theme was changed');
+    
+    if(appTheme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }    
+  };
 
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path={AppRoute.ROOT} >
-            <Home user={userData[0]} renderAvatar={renderAvatar}/>
-          </Route>
-          <Route exact path={AppRoute.ABOUT}>
-            <About user={userData[0]}/>
-          </Route>
-          <Route exact path={AppRoute.EXPERIENCE}>
-            <Experience user={userData[0]}/>
-          </Route>
-          <Route exact path={AppRoute.FORM} component={Form} />
-          <Route path={AppRoute.ANY} component={NotFound} />
-        </Switch>
-      </Router>
-      
-      
+      <ThemeContext.Provider value={{
+        theme: appTheme,
+        toggleTheme: toggleTheme,
+      }}>
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path={AppRoute.ROOT} >
+              <Home user={userData[0]} renderAvatar={renderAvatar}/>
+            </Route>
+            <Route exact path={AppRoute.ABOUT}>
+              <About user={userData[0]}/>
+            </Route>
+            <Route exact path={AppRoute.EXPERIENCE}>
+              <Experience user={userData[0]}/>
+            </Route>
+            <Route exact path={AppRoute.FORM} component={Form} />
+            <Route path={AppRoute.ANY} component={NotFound} />
+          </Switch>
+        </Router>
+      </ThemeContext.Provider>    
     </div>
   );
 }

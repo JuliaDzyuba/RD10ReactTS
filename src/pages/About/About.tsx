@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../App';
 import { IData } from '../../common/types/data.type';
 import EduList from '../../components/EduList';
 import Skill from '../../components/Skill';
@@ -9,8 +10,9 @@ type AboutProps = {
 }
 
 const About: React.FC<AboutProps> = ({user}) => {
+  const themeContext = useContext(ThemeContext);
   return (    
-    <div className="container">
+    <div className={`container ${themeContext.theme}`}>
       <h2>About me</h2>
       <p className={styles.summary}>
         {user?.summary}

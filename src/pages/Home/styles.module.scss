@@ -1,7 +1,12 @@
+.homeWrapper {
+  height: 100vh;
+}
 .avatar {  
   width: 400px;
-  height: 400px;
+  height: 350px;
+  margin: 0 auto;
   border: 5px solid orchid;
+  overflow: hidden;
 }
 h2 {
   text-align: center;

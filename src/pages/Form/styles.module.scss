@@ -1,3 +1,9 @@
+.formWrapper {
+  height: 100vh;
+}
+
 .focusedInput input {
   outline-color: blue;
+  display: block;
+  margin: 30px auto;
 }

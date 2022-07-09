@@ -1,0 +1,113 @@
+[
+  {
+    "name": "Julia Dziuba",
+    "currentRole": "Software Engineer",
+    "avatar": "https://thumbs.dreamstime.com/b/woman-laptop-showing-young-beautiful-using-computer-sitting-crossed-legs-isolated-vector-illustration-209367134.jpg",
+    "summary": "I am a Software Engineer with experience in building quality web applications using modern technologies.\n I'm a responsible, attentive, goal-oriented person, self-organized and able to work independently with little or no supervision, good team player, open to new ideas,  striving to improve professional skills and abilities.",
+    "education": [
+      {
+        "id": "e1",
+        "institution": "Course “Full-stack Javascript developer” (Binary Studio)",
+        "start": "01/05/2021",
+        "graduate": "01/07/2021"
+      },
+      {
+        "id": "e2",
+        "institution": "English course (GreenForest, CERTIFICATE)",
+        "start": "01/12/2021",
+        "graduate": "01/03/2022"
+      },
+      {
+        "id": "e3",
+        "institution": "Course “JavaScript (ES5, ES6), React.js” (WayUp) ",
+        "start": "01/03/2020",
+        "graduate": "01/07/2020"
+      },
+      {
+        "id": "e4",
+        "institution": "Course “WEB- developer 2020” (от Udemy)",
+        "start": "01/01/2020",
+        "graduate": "01/03/2020"
+      },
+      {
+        "id": "e5",
+        "institution": "Course “CS50. Basics of programming” (by Prometheus)",
+        "start": "01/01/2018",
+        "graduate": "01/03/2018"
+      },
+      {
+        "id": "e6",
+        "institution": "Alfred Nobel University, Dnipro",
+        "start": "01/09/1997",
+        "graduate": "01/07/2002"
+      },
+      {
+        "id": "e7",
+        "institution": "National Metallurgical Academy of Ukraine, Dnipro",
+        "start": "01/09/1997",
+        "graduate": "01/07/2002"
+      }
+    ],
+    "experience": [
+      {
+        "id": "exp0",
+        "organization": "EPAM Systems",
+        "role": "Software Engineer",
+        "start": "01/01/2022",
+        "finish": "01/04/2022",
+        "duties": "Developing an information website with articles, tips and useful materials for charity project: redesigning, implementing new features (React, Redux), working with other people code, bug fixing. , ets."
+      },
+      {
+        "id": "exp1",        
+        "organization": "Binary Studio",
+        "role": "Intern full-stack developer",
+        "start": "01/05/2021",
+        "finish": "15/09/2021",
+        "duties": "Worked on Jabber Project - A platform for creating, serving and listening to podcasts. Includes a user-friendly player, private podcasts, live record, live chat and more. ReactJS, TypeScript, Redux,  NodeJS, ExpressJS, PostgreSQL (Knex, ObjectionJS)"
+      },
+      {
+        "id": "exp2",
+        "organization": "Freelancer",
+        "role": "Web developer, copywriter, rewriter",
+        "start": "01/09/2019",
+        "finish": "30/11/2021",
+        "duties": "Web-development, WordPress Integration, copywriting, rewriting, making content"
+      },
+      {
+        "id": "exp3",
+        "organization": "IV Promotions",
+        "role": "Copywriter, rewriter, advertising manager",
+        "start": "01/01/2015",
+        "finish": "01/07/2016",
+        "duties": "Writing of unique thematic texts, rewriting. Contracting for the placement of advertising materials on thematic web resources (banners, links for SEO optimization, etc.), their support and control"
+      }
+    ],
+    "skills": {
+      "mainStack": [
+        "HTML",
+        "CSS (SASS/SCSS)",
+        "JavaScript",
+        "TypeScript",
+        "ReactJS",
+        "Redux",
+        "NodeJS",
+        "ExpressJS",
+        "Socket.io"
+      ],
+      "database": [
+        "PostgreSQL (Knex, ObjectionJS)",
+        "MongoDB"
+      ],
+      "additionally": [
+        "GIT",
+        "npm",
+        "Gulp",
+        "Webpack",
+        "Photoshop",
+        "Figma",
+        "Avocode"
+      ],
+      "englishLevel": "B1"
+    }
+  }
+]

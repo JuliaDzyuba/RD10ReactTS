@@ -7,10 +7,11 @@ import styles from './styles.module.scss';
 
 type AboutProps = {
   user: IData,
-}
+};
 
 const About: React.FC<AboutProps> = ({user}) => {
   const themeContext = useContext(ThemeContext);
+
   return (    
     <div className={`container ${themeContext.theme}`}>
       <h2>About me</h2>
@@ -36,6 +37,6 @@ const About: React.FC<AboutProps> = ({user}) => {
       <EduList educationList={user?.education}/>
     </div>
   );
-}
+};
 
 export default About;

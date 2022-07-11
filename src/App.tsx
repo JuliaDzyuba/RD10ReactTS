@@ -15,7 +15,7 @@ const fetchData = async (url: string): Promise<IData[]> => {
   const response = await fetch(url);
   const data = await response.json();
   return data;  
-}
+};
 
 export const ThemeContext = React.createContext<{
   theme: string,
@@ -26,7 +26,7 @@ export const ThemeContext = React.createContext<{
 });
 
 const App: React.FC = () => {
-  const [userData, setUserData] = useState<IData[]>([]);
+  const [usersData, setUsersData] = useState<IData[]>([]);
   const [appTheme, setTheme] = useState<string>(AppTheme.LIGHT);
   
   useEffect(() => {
@@ -34,7 +34,7 @@ const App: React.FC = () => {
       try {
         const data = await fetchData('./data.json');
         if(data.length) {
-          setUserData(data);
+          setUsersData(data);
         }      
       } catch (error) {
         console.log(error);        
@@ -42,7 +42,7 @@ const App: React.FC = () => {
     })();
   }, []);
 
-  const renderAvatar = () => <Avatar source={userData[0]?.avatar} username={userData[0]?.name}/>;
+  const renderAvatar = () => <Avatar source={usersData[0]?.avatar} username={usersData[0]?.name}/>;
 
   const toggleTheme = () => {
     if(appTheme === AppTheme.LIGHT) {
@@ -50,6 +50,23 @@ const App: React.FC = () => {
     } else {
       setTheme(AppTheme.LIGHT);
     }    
+  };
+
+  const addUser = () => {
+    setUsersData([...usersData, {
+      name: 'new User',
+      currentRole: 'user',
+      avatar: 'https://via.placeholder.com/300',
+      summary: '',
+      education: [],
+      experience: [],
+      skills: {
+        mainStack: ['rr'],
+        database: ['rr'],
+        additionally: ['rr'],
+        englishLevel: 'rr',
+      },
+    }])
   };
 
   return (
@@ -60,23 +77,26 @@ const App: React.FC = () => {
       }}>
         <Router>
           <Header />
+          <button type="button" onClick={addUser}>Add user</button>
           <Switch>
             <Route exact path={AppRoute.ROOT} >
-              <Home user={userData[0]} renderAvatar={renderAvatar}/>
+              <Home user={usersData[0]} renderAvatar={renderAvatar}/>
             </Route>
             <Route exact path={AppRoute.ABOUT}>
-              <About user={userData[0]}/>
+              <About user={usersData[0]}/>
             </Route>
             <Route exact path={AppRoute.EXPERIENCE}>
-              <Experience user={userData[0]}/>
+              <Experience user={usersData[0]}/>
             </Route>
-            <Route exact path={AppRoute.FORM} component={Form} />
+            <Route exact path={AppRoute.FORM} >
+              <Form users={usersData}/>
+            </Route>
             <Route path={AppRoute.ANY} component={NotFound} />
           </Switch>
         </Router>
       </ThemeContext.Provider>    
     </div>
   );
-}
+};
 
 export default App;

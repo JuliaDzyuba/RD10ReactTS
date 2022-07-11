@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom';
-import { AppRoute } from './common/enum/app-route.enum';
+import { AppRoute, AppTheme } from './common/enum';
 import { IData } from './common/types/data.type';
 import Avatar from './components/Avatar';
 import Header from './components/Header';
@@ -21,13 +21,13 @@ export const ThemeContext = React.createContext<{
   theme: string,
   toggleTheme: () => void,
 }>({
-  theme: 'light',
+  theme: AppTheme.LIGHT,
   toggleTheme() {},
 });
 
 const App: React.FC = () => {
   const [userData, setUserData] = useState<IData[]>([]);
-  const [appTheme, setTheme] = useState<string>('light');
+  const [appTheme, setTheme] = useState<string>(AppTheme.LIGHT);
   
   useEffect(() => {
     (async () => {
@@ -45,17 +45,15 @@ const App: React.FC = () => {
   const renderAvatar = () => <Avatar source={userData[0]?.avatar} username={userData[0]?.name}/>;
 
   const toggleTheme = () => {
-    console.log('theme was changed');
-    
-    if(appTheme === 'light') {
-      setTheme('dark');
+    if(appTheme === AppTheme.LIGHT) {
+      setTheme(AppTheme.DARK);
     } else {
-      setTheme('light');
+      setTheme(AppTheme.LIGHT);
     }    
   };
 
   return (
-    <div className="App">
+    <div className={`App ${appTheme}`}>
       <ThemeContext.Provider value={{
         theme: appTheme,
         toggleTheme: toggleTheme,

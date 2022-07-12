@@ -2,8 +2,17 @@
   height: 100vh;
 }
 
-.focusedInput input {
-  outline-color: blue;
+.focusedInput {
+  width: 300px;
   display: block;
   margin: 30px auto;
+  text-align: center;
+  input {
+    outline-color: blue;
+    display: block;
+    margin: 10px auto;
+  }
+  span {
+    color: red;
+  }
 }

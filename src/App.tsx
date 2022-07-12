@@ -54,7 +54,7 @@ const App: React.FC = () => {
 
   const addUser = () => {
     setUsersData([...usersData, {
-      name: 'new User',
+      name: `new user ${Date.now()}`,
       currentRole: 'user',
       avatar: 'https://via.placeholder.com/300',
       summary: '',

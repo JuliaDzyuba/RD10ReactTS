@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useContext, useMemo } from 'react';
 import { ThemeContext } from '../../App';
 import { IData } from '../../common/types/data.type';
+import useInput from '../../hooks/inputHook';
 import Counter from './Counter/Counter';
 import styles from './styles.module.scss';
 
@@ -12,13 +13,14 @@ const Form: React.FC<Props> = ({ users }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const themeContext = useContext(ThemeContext);
 
+  const input = useInput('');
+
   useEffect(() => {
     inputRef.current?.focus();
   },[]);
 
   const counter = useMemo(() => {
-    console.log("memo");
-    return users.length;
+    return users.length;    
   }, [users]);
 
   return (    
@@ -29,13 +31,19 @@ const Form: React.FC<Props> = ({ users }) => {
           <input ref={inputRef} type="text" placeholder='First input...'/>
         </label>
         <label htmlFor="input" className={styles.focusedInput}>
-          <input type="text" placeholder='Second input...'/>
+          <input
+            type="text"
+            placeholder='Second input...'
+            value={input.value}
+            onChange={input.onChange}
+          />
+          <span>{input.error}</span>
         </label>
         <hr />
         <Counter counter={counter}/>
       </div>
     </div>
   );
-}
+};
 
 export default Form;

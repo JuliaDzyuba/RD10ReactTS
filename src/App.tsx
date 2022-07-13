@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import { AppRoute, AppTheme } from './common/enum';
 import { IData } from './common/types/data.type';
 import Avatar from './components/Avatar';
+import Button from './components/Button';
 import Header from './components/Header';
 import About from './pages/About';
 import Experience from './pages/Experience';
@@ -77,7 +78,7 @@ const App: React.FC = () => {
       }}>
         <Router>
           <Header />
-          <button type="button" onClick={addUser}>Add user</button>
+          <Button onClick={addUser}/>
           <Switch>
             <Route exact path={AppRoute.ROOT} >
               <Home user={usersData[0]} renderAvatar={renderAvatar}/>

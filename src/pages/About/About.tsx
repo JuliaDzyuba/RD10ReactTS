@@ -3,6 +3,7 @@ import { ThemeContext } from '../../App';
 import { IData } from '../../common/types/data.type';
 import EduList from '../../components/EduList';
 import Skill from '../../components/Skill';
+import { getSkillsAmount } from '../../ulils/getSkillsAmount';
 import styles from './styles.module.scss';
 
 type AboutProps = {
@@ -19,7 +20,7 @@ const About: React.FC<AboutProps> = ({user}) => {
         {user?.summary}
       </p>
       <h2>Skills</h2>
-      <h3>Main stack:</h3>
+      <h3>Main stack ({getSkillsAmount(user?.skills.mainStack)}):</h3>
       <div className={styles.skills}>
         {user?.skills.mainStack.map((s) => <Skill key={s} skill={s}/>)}
       </div>

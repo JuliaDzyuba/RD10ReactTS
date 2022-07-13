@@ -30,10 +30,11 @@ const Form: React.FC<Props> = ({ users }) => {
         <label htmlFor="input" className={styles.focusedInput}>
           <input ref={inputRef} type="text" placeholder='First input...'/>
         </label>
-        <label htmlFor="input" className={styles.focusedInput}>
+        <label htmlFor="second" className={styles.focusedInput}>
           <input
             type="text"
             placeholder='Second input...'
+            id='second'
             value={input.value}
             onChange={input.onChange}
           />

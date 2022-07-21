@@ -2,8 +2,18 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App component', () => {
+  test('should render', () => {
+    const { container } = render(<App />);
+    
+    expect(container).toMatchSnapshot();
+  });
+
+  test('renders change theme button', () => {
+    render(<App />);
+
+    const changeBtn = screen.getByText(/change theme/i);
+
+    expect(changeBtn).toBeInTheDocument();
+  });
 });

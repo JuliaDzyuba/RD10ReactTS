@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form component should render 1`] = `
+<div>
+  <div
+    class="container light"
+  >
+    <div
+      class="formWrapper"
+    >
+      <h2>
+        Form
+      </h2>
+      <label
+        class="focusedInput"
+        for="input"
+      >
+        <input
+          placeholder="First input..."
+          type="text"
+        />
+      </label>
+      <label
+        class="focusedInput"
+        for="second"
+      >
+        <input
+          id="second"
+          placeholder="Second input..."
+          type="text"
+          value=""
+        />
+        <span>
+          must be at least 3 characters
+        </span>
+      </label>
+      <hr />
+      <div>
+        <h2>
+          Users counter: 
+          1
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+`;

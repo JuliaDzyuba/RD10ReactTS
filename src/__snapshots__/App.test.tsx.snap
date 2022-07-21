@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component should render 1`] = `
+<div>
+  <div
+    class="App light"
+  >
+    <header
+      class="header"
+    >
+      <div
+        class="container"
+      >
+        <nav
+          class="nav"
+        >
+          <ul>
+            <li>
+              <a
+                href="/"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="/about"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="/experience"
+              >
+                Experience
+              </a>
+            </li>
+            <li>
+              <a
+                href="/form"
+              >
+                Form
+              </a>
+            </li>
+          </ul>
+          <button
+            type="button"
+          >
+            Change theme
+          </button>
+        </nav>
+      </div>
+    </header>
+    <button
+      type="button"
+    >
+      Add new user
+    </button>
+    <div
+      class="container light"
+    >
+      <div
+        class="homeWrapper"
+      >
+        <h2>
+          Hi, I am 
+        </h2>
+        <div
+          class="avatar"
+        >
+          <img />
+        </div>
+        <p
+          class="role"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
